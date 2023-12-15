@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var counterLabel: UILabel!
@@ -37,6 +38,7 @@ class ViewController: UIViewController {
         counter += 1
         counterLabel.text = "\(counter)"
         historyTextView.text += "[\(dateFormatter.string(from: Date()))]: значение изменено на +1\n"
+        historyTextView.scrollTextViewBottom()
     }
     
     @IBAction func minusTouchUp(_ sender: Any) {
@@ -46,11 +48,13 @@ class ViewController: UIViewController {
         }
         counterLabel.text = "\(counter)"
         historyTextView.text += "[\(dateFormatter.string(from: Date()))]: значение изменено на -1\n"
+        historyTextView.scrollTextViewBottom()
     }
     @IBAction func zeroTouchUp(_ sender: Any) {
         counter = 0
         counterLabel.text = "\(counter)"
         historyTextView.text += "[\(dateFormatter.string(from: Date()))]: попытка уменьшить значение счётчика ниже 0\n"
+        historyTextView.scrollTextViewBottom()
     }
 }
 

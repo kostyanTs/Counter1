@@ -16,6 +16,7 @@
 		357A51A62B2AE32D0079A689 /* Counter1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357A51A52B2AE32D0079A689 /* Counter1Tests.swift */; };
 		357A51B02B2AE32D0079A689 /* Counter1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357A51AF2B2AE32D0079A689 /* Counter1UITests.swift */; };
 		357A51B22B2AE32D0079A689 /* Counter1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357A51B12B2AE32D0079A689 /* Counter1UITestsLaunchTests.swift */; };
+		357A51BF2B2CE2560079A689 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357A51BE2B2CE2560079A689 /* UITextView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		357A51AB2B2AE32D0079A689 /* Counter1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Counter1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		357A51AF2B2AE32D0079A689 /* Counter1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter1UITests.swift; sourceTree = "<group>"; };
 		357A51B12B2AE32D0079A689 /* Counter1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter1UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		357A51BE2B2CE2560079A689 /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				357A518E2B2AE32B0079A689 /* AppDelegate.swift */,
 				357A51902B2AE32B0079A689 /* SceneDelegate.swift */,
 				357A51922B2AE32B0079A689 /* ViewController.swift */,
+				357A51BE2B2CE2560079A689 /* UITextView+Extension.swift */,
 				357A51942B2AE32B0079A689 /* Main.storyboard */,
 				357A51972B2AE32C0079A689 /* Assets.xcassets */,
 				357A51992B2AE32C0079A689 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				357A51932B2AE32B0079A689 /* ViewController.swift in Sources */,
+				357A51BF2B2CE2560079A689 /* UITextView+Extension.swift in Sources */,
 				357A518F2B2AE32B0079A689 /* AppDelegate.swift in Sources */,
 				357A51912B2AE32B0079A689 /* SceneDelegate.swift in Sources */,
 			);

@@ -10,50 +10,59 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var counterLabel: UILabel!
+    //Mark: -IBOutlets
     
-    @IBOutlet weak var plusCounterButton: UIButton!
+    @IBOutlet private weak var counterLabel: UILabel!
+    @IBOutlet private weak var plusCounterButton: UIButton!
+    @IBOutlet private weak var minusCounterButton: UIButton!
+    @IBOutlet private weak var zeroButton: UIButton!
+    @IBOutlet private weak var historyOfChangesLabel: UILabel!
+    @IBOutlet private weak var historyTextView: UITextView!
     
-    @IBOutlet weak var minusCounterButton: UIButton!
-    
-    @IBOutlet weak var zeroButton: UIButton!
-    
-    @IBOutlet weak var historyOfChangesLabel: UILabel!
-    
-    @IBOutlet weak var historyTextView: UITextView!
+    //Mark: -Properties
     
     private var counter: Int = 0
     private var history: String = ""
     private let dateFormatter = DateFormatter()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private func forDidLoad(){
         plusCounterButton.tintColor = .red
         historyOfChangesLabel.text = "История изменений:"
         historyTextView.text = ""
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
     }
     
-    @IBAction func plusTouchUp(_ sender: Any) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        forDidLoad()
+    }
+    
+    //Mark: -IBActions
+    
+    @IBAction private func plusTouchUp(_ sender: Any) {
         counter += 1
         counterLabel.text = "\(counter)"
         historyTextView.text += "[\(dateFormatter.string(from: Date()))]: значение изменено на +1\n"
         historyTextView.scrollTextViewBottom()
     }
     
-    @IBAction func minusTouchUp(_ sender: Any) {
-        counter -= 1
-        if counter < 0 {
+    @IBAction private func minusTouchUp(_ sender: Any) {
+        guard counter > 0 else {
             counter = 0
+            historyTextView.text += "[\(dateFormatter.string(from: Date()))]: попытка уменьшить значение счётчика ниже 0\n"
+            historyTextView.scrollTextViewBottom()
+            return
         }
+        counter -= 1
         counterLabel.text = "\(counter)"
         historyTextView.text += "[\(dateFormatter.string(from: Date()))]: значение изменено на -1\n"
         historyTextView.scrollTextViewBottom()
     }
-    @IBAction func zeroTouchUp(_ sender: Any) {
+    
+    @IBAction private func zeroTouchUp(_ sender: Any) {
         counter = 0
         counterLabel.text = "\(counter)"
-        historyTextView.text += "[\(dateFormatter.string(from: Date()))]: попытка уменьшить значение счётчика ниже 0\n"
+        historyTextView.text += "[\(dateFormatter.string(from: Date()))]: значение изменено на 0\n"
         historyTextView.scrollTextViewBottom()
     }
 }
